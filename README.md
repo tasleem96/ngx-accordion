@@ -57,6 +57,25 @@ import {ACCORDION_DIRECTIVES} from "ng2-accordion/ng2-accordion";
         </accordion-group>
     </accordion>
 
+    <!-- regular accordion with first opened group -->
+    <accordion>
+        <accordion-group heading="About me" [isOpened]="true">
+            Its all about me.
+        </accordion-group>
+        <accordion-group heading="Contacts">
+            This is content of the contacts
+        </accordion-group>
+        <accordion-group heading="Map">
+            Content of the Map
+        </accordion-group>
+        <accordion-group>
+            <accordion-heading>
+                Custom heading.  
+            </accordion-heading>
+            Its all about me.
+        </accordion-group>
+    </accordion>
+
     <!-- accordion with arrows -->
     <accordion [showArrows]="true">
         <accordion-group heading="About me">
