@@ -39,7 +39,7 @@ import {ACCORDION_DIRECTIVES} from "../../src/ng2-accordion";
         </accordion-group>
         <accordion-group>
             <accordion-heading>
-                Custom heading.  
+                <b>Custom</b> <i style="color: deeppink">heading</i>.  
             </accordion-heading>
             Its all about me.
         </accordion-group>

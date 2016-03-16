@@ -4,7 +4,7 @@ import {AccordionGroup} from "./AccordionGroup";
 @Component({
     selector: "accordion",
     template: `
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+<div class="panel-group" role="tablist" aria-multiselectable="true">
     <ng-content></ng-content>   
 </div>
 `

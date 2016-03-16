@@ -5,7 +5,7 @@ import {Accordion} from "./Accordion";
     selector: "accordion-group",
     template: `
   <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingOne" (click)="toggle()">
+    <div class="panel-heading" role="tab" (click)="toggle()">
       <h4 class="panel-title">
         <a *ngIf="heading" role="button" data-toggle="collapse" [attr.aria-expanded]="isOpened">
             {{ heading }}
@@ -14,7 +14,7 @@ import {Accordion} from "./Accordion";
         <div *ngIf="showArrows()" class="caret" [style.borderTop]="isOpened ? 0 : ''" [style.borderBottom]="isOpened ? '4px dashed' : ''"></div>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse" [class.in]="isOpened" role="tabpanel" [attr.aria-labelledby]="heading">
+    <div  class="panel-collapse collapse" [class.in]="isOpened" role="tabpanel" [attr.aria-labelledby]="heading">
       <div class="panel-body">
         <ng-content></ng-content>   
       </div>
