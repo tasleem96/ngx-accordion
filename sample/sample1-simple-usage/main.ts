@@ -7,8 +7,8 @@ import {ACCORDION_DIRECTIVES} from "../../src/ng2-accordion";
     template: `
 <div class="container">
 
-    <!-- regular tabs -->
-    <accordion [showArrow]="true" [closeOthers]="false">
+    <!-- regular accordion -->
+    <accordion>
         <accordion-group heading="About me">
             Its all about me.
         </accordion-group>
@@ -20,7 +20,45 @@ import {ACCORDION_DIRECTIVES} from "../../src/ng2-accordion";
         </accordion-group>
         <accordion-group>
             <accordion-heading>
-                Dima shikof    
+                Custom heading.  
+            </accordion-heading>
+            Its all about me.
+        </accordion-group>
+    </accordion>
+
+    <!-- accordion with arrows -->
+    <accordion [showArrows]="true">
+        <accordion-group heading="About me">
+            Its all about me.
+        </accordion-group>
+        <accordion-group heading="Contacts">
+            This is content of the contacts
+        </accordion-group>
+        <accordion-group heading="Map">
+            Content of the Map
+        </accordion-group>
+        <accordion-group>
+            <accordion-heading>
+                Custom heading.  
+            </accordion-heading>
+            Its all about me.
+        </accordion-group>
+    </accordion>
+    
+    <!-- accordion where you can close multiple groups -->
+    <accordion [closeOthers]="false">
+        <accordion-group heading="About me">
+            Its all about me.
+        </accordion-group>
+        <accordion-group heading="Contacts">
+            This is content of the contacts
+        </accordion-group>
+        <accordion-group heading="Map">
+            Content of the Map
+        </accordion-group>
+        <accordion-group>
+            <accordion-heading>
+                Custom heading.  
             </accordion-heading>
             Its all about me.
         </accordion-group>

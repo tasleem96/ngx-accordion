@@ -15,7 +15,7 @@ export class Accordion {
     closeOthers = true;
 
     @Input()
-    showArrow = false;
+    showArrows = false;
 
     @ContentChildren(forwardRef(() => AccordionGroup))
     groups: QueryList<AccordionGroup>;
