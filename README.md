@@ -4,8 +4,21 @@ Simple accordion control for your angular2 applications using bootstrap3. Does n
 
 ## Installation
 
+1. Install npm module:
+
 `npm install ng2-accordion --save`
 
+2. If you are using system.js you may want to add this into `map` and `package` config:
+
+```json
+{
+    "map": {
+        "ng2-accordion": "node_modules/ng2-accordion"
+    },
+    "packages": {
+        "ng2-accordion": { "main": "index.js", "defaultExtension": "js" }
+    }
+}
 ## Usage
 
 ```typescript

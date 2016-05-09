@@ -1,4 +1,4 @@
-import {ContentChildren, Component, QueryList, Input, forwardRef} from "angular2/core";
+import {ContentChildren, Component, QueryList, Input, forwardRef} from "@angular/core";
 import {AccordionGroup} from "./AccordionGroup";
 
 @Component({

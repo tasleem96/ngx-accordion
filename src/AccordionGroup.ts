@@ -1,4 +1,4 @@
-import {Component, Input, Host, forwardRef, Inject} from "angular2/core";
+import {Component, Input, Host, forwardRef, Inject} from "@angular/core";
 import {Accordion} from "./Accordion";
 
 @Component({
