@@ -19,6 +19,7 @@ Simple accordion control for your angular2 applications using bootstrap3. Does n
         "ng2-accordion": { "main": "index.js", "defaultExtension": "js" }
     }
 }
+```
 ## Usage
 
 ```typescript
