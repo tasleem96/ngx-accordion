@@ -9,21 +9,21 @@ or create an issue if you have problems with it.
 ## Installation
 
 1. Install npm module:
-
-`npm install ng2-accordion --save`
+    
+    `npm install ng2-accordion --save`
 
 2. If you are using system.js you may want to add this into `map` and `package` config:
 
-```json
-{
-    "map": {
-        "ng2-accordion": "node_modules/ng2-accordion"
-    },
-    "packages": {
-        "ng2-accordion": { "main": "index.js", "defaultExtension": "js" }
+    ```json
+    {
+        "map": {
+            "ng2-accordion": "node_modules/ng2-accordion"
+        },
+        "packages": {
+            "ng2-accordion": { "main": "index.js", "defaultExtension": "js" }
+        }
     }
-}
-```
+    ```
 
 ## Usage
 
