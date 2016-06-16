@@ -1,6 +1,10 @@
 # ng2-accordion
 
 Simple accordion control for your angular2 applications using bootstrap3. Does not depend of jquery.
+If you want to use it without bootstrap - simply create proper css classes. Please star a project if you liked it,
+or create an issue if you have problems with it.
+
+![angular 2 popover](https://raw.githubusercontent.com/pleerock/ng2-popover/master/resources/popover-example.png)
 
 ## Installation
 
@@ -27,23 +31,35 @@ Simple accordion control for your angular2 applications using bootstrap3. Does n
 <accordion [showArrows]="true" [closeOthers]="false" [expandAll]="true">
     <accordion-group heading="Accordion heading">
         <accordion-heading>
-            Or <b>custom</b> heading.  
+            Or <b>custom</b> <accordion-toggle>heading with clickable zone.</accordion-toggle>
         </accordion-heading>
         Accordion group contents.
-    </accordion>
+    </accordion-group>
     ...
 </accordion>
 ```
 
 * `<accordion>`:
+
+    Contains accordion groups.
+
     * `[showArrows]="true|false"` Indicates if arrows should be shown or not. Default is **false**
     * `[closeOthers]="true|false"` Indicates if other opened groups should be automatically closed when you open a new group. Default is **true**
     * `[expandAll]="true|false"` Indicates if all panels should be expanded by default. Default is **false**.
     When using this option `closeOthers` is explicitly set to true, because this option does not make sense
     when you can have only one opened panel at the same time.
 * `<accordion-group>`:
+
+    Used inside `<accordion>` and represents a single collapsible panel.
+
     * `heading="Group heading"` Simple text group heading
     * `<accordion-heading>` Content zone where you can put custom headings
+
+* `<accordion-toggle>`:
+
+    Used inside `<accordion-group>` to provide a *custom clickable zone* for the accordion heading.
+    This is usable when you have clickable controls in your header (for example checkbox) and you don't want
+    accordion to be opened/closed on click of this controls.
 
 ## Sample
 
@@ -69,7 +85,7 @@ import {ACCORDION_DIRECTIVES} from "ng2-accordion";
         </accordion-group>
         <accordion-group>
             <accordion-heading>
-                Custom heading.  
+                Custom heading
             </accordion-heading>
             Its all about me.
         </accordion-group>
@@ -88,7 +104,7 @@ import {ACCORDION_DIRECTIVES} from "ng2-accordion";
         </accordion-group>
         <accordion-group>
             <accordion-heading>
-                Custom heading.  
+                <b>Custom</b> <i style="color: deeppink">heading</i>
             </accordion-heading>
             Its all about me.
         </accordion-group>
@@ -107,12 +123,12 @@ import {ACCORDION_DIRECTIVES} from "ng2-accordion";
         </accordion-group>
         <accordion-group>
             <accordion-heading>
-                Custom heading.  
+                Custom heading
             </accordion-heading>
             Its all about me.
         </accordion-group>
     </accordion>
-    
+
     <!-- accordion where you can close multiple groups -->
     <accordion [closeOthers]="false">
         <accordion-group heading="About me">
@@ -126,7 +142,7 @@ import {ACCORDION_DIRECTIVES} from "ng2-accordion";
         </accordion-group>
         <accordion-group>
             <accordion-heading>
-                Custom heading.  
+                Custom heading
             </accordion-heading>
             Its all about me.
         </accordion-group>
@@ -145,7 +161,26 @@ import {ACCORDION_DIRECTIVES} from "ng2-accordion";
         </accordion-group>
         <accordion-group>
             <accordion-heading>
-                Custom heading.
+                Custom heading
+            </accordion-heading>
+            Its all about me.
+        </accordion-group>
+    </accordion>
+
+    <!-- accordion with custom "clickable zone" -->
+    <accordion>
+        <accordion-group heading="About me">
+            Its all about me.
+        </accordion-group>
+        <accordion-group heading="Contacts">
+            This is content of the contacts
+        </accordion-group>
+        <accordion-group heading="Map">
+            Content of the Map
+        </accordion-group>
+        <accordion-group>
+            <accordion-heading>
+                <input type="checkbox"> <accordion-toggle>Custom clickable heading</accordion-toggle>
             </accordion-heading>
             Its all about me.
         </accordion-group>

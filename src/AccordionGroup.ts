@@ -1,11 +1,12 @@
-import {Component, Input, Host, forwardRef, Inject} from "@angular/core";
+import {Component, Input, Host, forwardRef, Inject, ContentChild, ElementRef, ViewChild} from "@angular/core";
 import {Accordion} from "./Accordion";
+import {AccordionToggle} from "./AccordionToggle";
 
 @Component({
     selector: "accordion-group",
     template: `
   <div class="panel panel-default">
-    <div class="panel-heading" role="tab" (click)="toggle()">
+    <div class="panel-heading" role="tab" (click)="checkAndToggle()">
       <h4 class="panel-title">
         <a *ngIf="heading" role="button" data-toggle="collapse" [attr.aria-expanded]="isOpened">
             {{ heading }}
@@ -30,7 +31,19 @@ export class AccordionGroup {
     @Input()
     isOpened: boolean = false;
 
-    constructor(@Host() @Inject(forwardRef(() => Accordion))  private accordion: Accordion) {
+    @ContentChild(AccordionToggle)
+    // @ContentChild("[accordion-toggle]")
+    toggler: ElementRef;
+
+    constructor(@Host() @Inject(forwardRef(() => Accordion)) private accordion: Accordion) {
+    }
+    
+    checkAndToggle() {
+        // if custom toggle element is supplied, then do nothing, custom toggler will take care of it
+        if (this.toggler)
+            return;
+        
+        this.toggle();
     }
 
     toggle() {

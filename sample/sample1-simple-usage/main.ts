@@ -20,7 +20,7 @@ import {ACCORDION_DIRECTIVES} from "../../src/index";
         </accordion-group>
         <accordion-group>
             <accordion-heading>
-                Custom heading.  
+                Custom heading
             </accordion-heading>
             Its all about me.
         </accordion-group>
@@ -39,7 +39,7 @@ import {ACCORDION_DIRECTIVES} from "../../src/index";
         </accordion-group>
         <accordion-group>
             <accordion-heading>
-                <b>Custom</b> <i style="color: deeppink">heading</i>.  
+                <b>Custom</b> <i style="color: deeppink">heading</i>
             </accordion-heading>
             Its all about me.
         </accordion-group>
@@ -58,7 +58,7 @@ import {ACCORDION_DIRECTIVES} from "../../src/index";
         </accordion-group>
         <accordion-group>
             <accordion-heading>
-                Custom heading.  
+                Custom heading  
             </accordion-heading>
             Its all about me.
         </accordion-group>
@@ -77,7 +77,7 @@ import {ACCORDION_DIRECTIVES} from "../../src/index";
         </accordion-group>
         <accordion-group>
             <accordion-heading>
-                Custom heading.  
+                Custom heading 
             </accordion-heading>
             Its all about me.
         </accordion-group>
@@ -96,7 +96,26 @@ import {ACCORDION_DIRECTIVES} from "../../src/index";
         </accordion-group>
         <accordion-group>
             <accordion-heading>
-                Custom heading.  
+                Custom heading 
+            </accordion-heading>
+            Its all about me.
+        </accordion-group>
+    </accordion>
+
+    <!-- accordion with custom "clickable zone" -->
+    <accordion>
+        <accordion-group heading="About me">
+            Its all about me.
+        </accordion-group>
+        <accordion-group heading="Contacts">
+            This is content of the contacts
+        </accordion-group>
+        <accordion-group heading="Map">
+            Content of the Map
+        </accordion-group>
+        <accordion-group>
+            <accordion-heading>
+                <input type="checkbox"> <accordion-toggle>Custom clickable heading</accordion-toggle>
             </accordion-heading>
             Its all about me.
         </accordion-group>
