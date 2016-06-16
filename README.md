@@ -20,10 +20,11 @@ Simple accordion control for your angular2 applications using bootstrap3. Does n
     }
 }
 ```
+
 ## Usage
 
 ```typescript
-<accordion [showArrows]="true" [closeOthers]="false">
+<accordion [showArrows]="true" [closeOthers]="false" [expandAll]="true">
     <accordion-group heading="Accordion heading">
         <accordion-heading>
             Or <b>custom</b> heading.  
@@ -37,6 +38,9 @@ Simple accordion control for your angular2 applications using bootstrap3. Does n
 * `<accordion>`:
     * `[showArrows]="true|false"` Indicates if arrows should be shown or not. Default is **false**
     * `[closeOthers]="true|false"` Indicates if other opened groups should be automatically closed when you open a new group. Default is **true**
+    * `[expandAll]="true|false"` Indicates if all panels should be expanded by default. Default is **false**.
+    When using this option `closeOthers` is explicitly set to true, because this option does not make sense
+    when you can have only one opened panel at the same time.
 * `<accordion-group>`:
     * `heading="Group heading"` Simple text group heading
     * `<accordion-heading>` Content zone where you can put custom headings
@@ -44,8 +48,8 @@ Simple accordion control for your angular2 applications using bootstrap3. Does n
 ## Sample
 
 ```typescript
-import {Component} from "angular2/core";
-import {ACCORDION_DIRECTIVES} from "ng2-accordion/ng2-accordion";
+import {Component} from "@angular/core";
+import {ACCORDION_DIRECTIVES} from "ng2-accordion";
 
 @Component({
     selector: "app",
@@ -127,7 +131,26 @@ import {ACCORDION_DIRECTIVES} from "ng2-accordion/ng2-accordion";
             Its all about me.
         </accordion-group>
     </accordion>
-    
+
+    <!-- accordion where all items are expanded by default -->
+    <accordion [expandAll]="true">
+        <accordion-group heading="About me">
+            Its all about me.
+        </accordion-group>
+        <accordion-group heading="Contacts">
+            This is content of the contacts
+        </accordion-group>
+        <accordion-group heading="Map">
+            Content of the Map
+        </accordion-group>
+        <accordion-group>
+            <accordion-heading>
+                Custom heading.
+            </accordion-heading>
+            Its all about me.
+        </accordion-group>
+    </accordion>
+
 </div>
 `,
     directives: [ACCORDION_DIRECTIVES]

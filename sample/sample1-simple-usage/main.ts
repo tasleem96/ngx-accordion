@@ -83,6 +83,25 @@ import {ACCORDION_DIRECTIVES} from "../../src/index";
         </accordion-group>
     </accordion>
     
+    <!-- accordion where all items are expanded by default -->
+    <accordion [expandAll]="true">
+        <accordion-group heading="About me">
+            Its all about me.
+        </accordion-group>
+        <accordion-group heading="Contacts">
+            This is content of the contacts
+        </accordion-group>
+        <accordion-group heading="Map">
+            Content of the Map
+        </accordion-group>
+        <accordion-group>
+            <accordion-heading>
+                Custom heading.  
+            </accordion-heading>
+            Its all about me.
+        </accordion-group>
+    </accordion>
+    
 </div>
 `,
     directives: [ACCORDION_DIRECTIVES]

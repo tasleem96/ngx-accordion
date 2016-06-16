@@ -1,4 +1,4 @@
-import {ContentChildren, Component, QueryList, Input, forwardRef} from "@angular/core";
+import {ContentChildren, Component, QueryList, Input, forwardRef, AfterContentInit} from "@angular/core";
 import {AccordionGroup} from "./AccordionGroup";
 
 @Component({
@@ -9,7 +9,7 @@ import {AccordionGroup} from "./AccordionGroup";
 </div>
 `
 })
-export class Accordion {
+export class Accordion implements AfterContentInit {
 
     @Input()
     closeOthers = true;
@@ -17,11 +17,25 @@ export class Accordion {
     @Input()
     showArrows = false;
 
+    @Input()
+    expandAll = false;
+
     @ContentChildren(forwardRef(() => AccordionGroup))
     groups: QueryList<AccordionGroup>;
 
+    ngAfterContentInit() {
+        if (this.expandAll) {
+            this.closeOthers = false;
+            this.groups.toArray().forEach(group => {
+                group.isOpened = true;
+            });
+        }
+    }
+
     closeAll() {
-        this.groups.toArray().forEach(group => group.isOpened = false);
+        this.groups.toArray().forEach(group => {
+            group.isOpened = false;
+        });
     }
 
 }
