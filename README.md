@@ -4,7 +4,7 @@ Simple accordion control for your angular2 applications using bootstrap3. Does n
 If you want to use it without bootstrap - simply create proper css classes. Please star a project if you liked it,
 or create an issue if you have problems with it.
 
-![angular 2 popover](https://raw.githubusercontent.com/pleerock/ng2-popover/master/resources/popover-example.png)
+![angular 2 popover](https://raw.githubusercontent.com/pleerock/ng2-accordion/master/resources/accordion-example.png)
 
 ## Installation
 
