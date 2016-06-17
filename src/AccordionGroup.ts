@@ -12,10 +12,7 @@ import {AccordionToggle} from "./AccordionToggle";
             {{ heading }}
         </a>
         <ng-content select="accordion-heading"></ng-content>  
-        <div class="caret"
-            [style.display]="accordion.showArrows ? '' : 'none'"
-            [style.borderTop]="isOpened ? '0' : '4px dashed'" 
-            [style.borderBottom]="isOpened ? '4px dashed' : '0'">
+        <div class="caret" [ngStyle]="{ display: accordion.showArrows ? '' : 'none', borderTop: isOpened ? '0' : '4px dashed', borderBottom: isOpened ? '4px dashed' : '0' }">
         </div>
       </h4>
     </div>

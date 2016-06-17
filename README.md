@@ -197,3 +197,8 @@ export class App {
 
 Take a look on samples in [./sample](https://github.com/pleerock/ng2-accordion/tree/master/sample) for more examples of
 usages.
+
+## Release notes
+
+**0.0.7**
+* angular rc.2 support. Use older versions if you still using rc1.
