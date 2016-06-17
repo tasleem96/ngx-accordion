@@ -11,8 +11,12 @@ import {AccordionToggle} from "./AccordionToggle";
         <a *ngIf="heading" role="button" data-toggle="collapse" [attr.aria-expanded]="isOpened">
             {{ heading }}
         </a>
-        <ng-content select="accordion-heading"></ng-content>   
-        <div *ngIf="showArrows()" class="caret" [style.borderTop]="isOpened ? 0 : ''" [style.borderBottom]="isOpened ? '4px dashed' : ''"></div>
+        <ng-content select="accordion-heading"></ng-content>  
+        <div class="caret"
+            [style.display]="accordion.showArrows ? '' : 'none'"
+            [style.borderTop]="isOpened ? '0' : '4px dashed'" 
+            [style.borderBottom]="isOpened ? '4px dashed' : '0'">
+        </div>
       </h4>
     </div>
     <div  class="panel-collapse collapse" [class.in]="isOpened" role="tabpanel" [attr.aria-labelledby]="heading">
@@ -32,10 +36,9 @@ export class AccordionGroup {
     isOpened: boolean = false;
 
     @ContentChild(AccordionToggle)
-    // @ContentChild("[accordion-toggle]")
     toggler: ElementRef;
 
-    constructor(@Host() @Inject(forwardRef(() => Accordion)) private accordion: Accordion) {
+    constructor(@Host() @Inject(forwardRef(() => Accordion)) public accordion: Accordion) {
     }
     
     checkAndToggle() {
@@ -50,11 +53,9 @@ export class AccordionGroup {
         const isOpenedBeforeWeChange = this.isOpened;
         if (this.accordion.closeOthers)
             this.accordion.closeAll();
-        this.isOpened = !isOpenedBeforeWeChange;
-    }
 
-    showArrows() {
-        return this.accordion.showArrows;
+        this.isOpened = !isOpenedBeforeWeChange;
+        console.log("this.isOpened: ", this.isOpened);
     }
 
 }
