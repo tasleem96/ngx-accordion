@@ -55,7 +55,6 @@ export class AccordionGroup {
             this.accordion.closeAll();
 
         this.isOpened = !isOpenedBeforeWeChange;
-        console.log("this.isOpened: ", this.isOpened);
     }
 
 }
