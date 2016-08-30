@@ -5,7 +5,7 @@ import {AccordionGroup} from "./AccordionGroup";
     selector: "accordion",
     template: `
 <div class="panel-group" role="tablist" aria-multiselectable="true">
-    <ng-content></ng-content>   
+    <ng-content></ng-content>
 </div>
 `
 })
