@@ -11,14 +11,14 @@ import {AccordionToggle} from "./AccordionToggle";
         <a *ngIf="heading" role="button" data-toggle="collapse" [attr.aria-expanded]="isOpened">
             {{ heading }}
         </a>
-        <ng-content select="accordion-heading"></ng-content>  
+        <ng-content select="accordion-heading"></ng-content>
         <div class="caret" [ngStyle]="{ display: accordion.showArrows ? '' : 'none', borderTop: isOpened ? '0' : '4px dashed', borderBottom: isOpened ? '4px dashed' : '0' }">
         </div>
       </h4>
     </div>
     <div  class="panel-collapse collapse" [class.in]="isOpened" role="tabpanel" [attr.aria-labelledby]="heading">
       <div class="panel-body">
-        <ng-content></ng-content>   
+        <ng-content></ng-content>
       </div>
     </div>
   </div>
@@ -37,12 +37,12 @@ export class AccordionGroup {
 
     constructor(@Host() @Inject(forwardRef(() => Accordion)) public accordion: Accordion) {
     }
-    
+
     checkAndToggle() {
         // if custom toggle element is supplied, then do nothing, custom toggler will take care of it
         if (this.toggler)
             return;
-        
+
         this.toggle();
     }
 

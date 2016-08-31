@@ -9,6 +9,13 @@
     "name": "Umed Khudoiberdiev",
     "email": "pleerock.me@gmail.com"
   },
+  "scripts": {
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
+    "lite": "lite-server -c bs-config.json",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "postinstall": "typings install"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/pleerock/ng2-accordion.git"
@@ -23,16 +30,17 @@
     "angular2-accordion"
   ],
   "peerDependencies": {
-    "@angular/core": "^2.0.0-rc.1"
+    "@angular/core": "^2.0.0-rc.5"
   },
   "devDependencies": {
-    "@angular/core": "^2.0.0-rc.2",
-    "@angular/common": "^2.0.0-rc.2",
-    "@angular/compiler": "^2.0.0-rc.2",
-    "@angular/platform-browser": "^2.0.0-rc.2",
-    "@angular/platform-browser-dynamic": "^2.0.0-rc.2",
+    "@angular/common": "^2.0.0-rc.5",
+    "@angular/compiler": "^2.0.0-rc.5",
+    "@angular/core": "^2.0.0-rc.5",
+    "@angular/platform-browser": "^2.0.0-rc.5",
+    "@angular/platform-browser-dynamic": "^2.0.0-rc.5",
     "bootstrap": "^3.3.6",
     "chai": "^3.4.1",
+    "concurrently": "^2.2.0",
     "del": "^2.2.0",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.33.3",
@@ -42,6 +50,7 @@
     "gulp-shell": "^0.5.1",
     "gulp-tslint": "^4.3.1",
     "gulpclass": "^0.1.0",
+    "lite-server": "^2.2.2",
     "mocha": "^2.3.2",
     "reflect-metadata": "^0.1.3",
     "rxjs": "5.0.0-beta.6",
