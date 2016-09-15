@@ -1,4 +1,4 @@
-import {Component, Input, Host, forwardRef, Inject, ContentChild, ElementRef, ViewChild} from "@angular/core";
+import {Component, Input, Host, forwardRef, Inject, ContentChild, ElementRef} from "@angular/core";
 import {Accordion} from "./Accordion";
 import {AccordionToggle} from "./AccordionToggle";
 
