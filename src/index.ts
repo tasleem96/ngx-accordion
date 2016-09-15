@@ -1,6 +1,5 @@
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
-
 import {AccordionGroup} from "./AccordionGroup";
 import {Accordion} from "./Accordion";
 import {AccordionToggle} from "./AccordionToggle";
