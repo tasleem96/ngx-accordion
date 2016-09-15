@@ -16,7 +16,7 @@ import {AccordionToggle} from "./AccordionToggle";
         </div>
       </h4>
     </div>
-    <div  class="panel-collapse collapse" [class.in]="isOpened" role="tabpanel" [attr.aria-labelledby]="heading">
+    <div *ngIf="isOpened" class="panel-collapse collapse in" role="tabpanel" [attr.aria-labelledby]="heading">
       <div class="panel-body">
         <ng-content></ng-content>
       </div>
