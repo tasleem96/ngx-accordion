@@ -5,14 +5,14 @@ import {AccordionToggle} from "./AccordionToggle";
 @Component({
     selector: "accordion-group",
     template: `
-  <div class="panel panel-default">
+  <div class="panel panel-default" [class.dropup]="isOpened">
     <div class="panel-heading" role="tab" (click)="checkAndToggle()">
       <h4 class="panel-title">
         <a *ngIf="heading" role="button" data-toggle="collapse" [attr.aria-expanded]="isOpened">
             {{ heading }}
         </a>
         <ng-content select="accordion-heading"></ng-content>
-        <div class="caret" [ngStyle]="{ display: accordion.showArrows ? '' : 'none', borderTop: isOpened ? '0' : '4px dashed', borderBottom: isOpened ? '4px dashed' : '0' }">
+        <div class="caret" [style.display]="accordion.showArrows ? '' : 'none'">
         </div>
       </h4>
     </div>
