@@ -47,9 +47,7 @@ Import `AccordionModule` in your app and start using component:
 
     * `[showArrows]="true|false"` Indicates if arrows should be shown or not. Default is **false**
     * `[closeOthers]="true|false"` Indicates if other opened groups should be automatically closed when you open a new group. Default is **true**
-    * `[expandAll]="true|false"` Indicates if all panels should be expanded by default. Default is **false**.
-    When using this option `closeOthers` is explicitly set to true, because this option does not make sense
-    when you can have only one opened panel at the same time.
+    * `[expandAll]="true|false"` Indicates if all panels should be expanded by default. Default is false. If expandAll is set to true, then the closeOthers option has no effect, since all panels are opened.
 * `<accordion-group>`:
 
     Used inside `<accordion>` and represents a single collapsible panel.
