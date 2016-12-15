@@ -1,4 +1,15 @@
-import {Component, Input, Host, forwardRef, Inject, ContentChild, ElementRef} from "@angular/core";
+import {
+    Component,
+    Input,
+    Host,
+    forwardRef,
+    Inject,
+    ContentChild,
+    ElementRef,
+    ChangeDetectorRef,
+    Output,
+    EventEmitter
+} from "@angular/core";
 import {Accordion} from "./Accordion";
 import {AccordionToggle} from "./AccordionToggle";
 
@@ -32,10 +43,20 @@ export class AccordionGroup {
     @Input()
     isOpened: boolean = false;
 
+    @Output()
+    onOpen = new EventEmitter();
+
+    @Output()
+    onClose = new EventEmitter();
+
+    @Output()
+    onToggle = new EventEmitter();
+
     @ContentChild(AccordionToggle)
     toggler: ElementRef;
 
-    constructor(@Host() @Inject(forwardRef(() => Accordion)) public accordion: Accordion) {
+    constructor(@Host() @Inject(forwardRef(() => Accordion)) public accordion: Accordion,
+                private cdr: ChangeDetectorRef) {
     }
 
     checkAndToggle() {
@@ -52,6 +73,17 @@ export class AccordionGroup {
             this.accordion.closeAll();
 
         this.isOpened = !isOpenedBeforeWeChange;
+        if (this.isOpened) {
+            this.onOpen.emit();
+        } else {
+            this.onClose.emit();
+        }
+        this.onToggle.emit(this.isOpened);
+    }
+
+    openOnInitialization() {
+        this.isOpened = true;
+        this.cdr.detectChanges();
     }
 
 }
