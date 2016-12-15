@@ -4,7 +4,7 @@ Simple accordion control for your angular2 applications using bootstrap3. Does n
 If you don't want to use it without bootstrap - simply create proper css classes. Please star a project if you liked it,
 or create an issue if you have problems with it.
 
-![angular 2 popover](https://raw.githubusercontent.com/pleerock/ng2-accordion/master/resources/accordion-example.png)
+![angular 2 accordion](https://raw.githubusercontent.com/pleerock/ng2-accordion/master/resources/accordion-example.png)
 
 ## Installation
 
@@ -53,6 +53,9 @@ Import `AccordionModule` in your app and start using component:
     Used inside `<accordion>` and represents a single collapsible panel.
 
     * `heading="Group heading"` Simple text group heading
+    * `(onOpen)="doSomethingOnOpen()"` Calls function when this accordion-group is opened
+    * `(onClose)="doSomethingOnClose()"` Calls function when this accordion-group is closed
+    * `(onToggle)="doSomethingOnToggle(isOpened)"` Calls function when this accordion-group is toggled
     * `<accordion-heading>` Content zone where you can put custom headings
 
 * `<accordion-toggle>`:
@@ -214,6 +217,11 @@ Take a look on samples in [./sample](https://github.com/pleerock/ng2-accordion/t
 usages.
 
 ## Release notes
+
+**0.0.12**
+* angular last version support
+* fixed issue when accordion is used in ngFor
+* added onOpen, onClose, onToggle event emitters to accordion group
 
 **0.0.9**
 * angular rc.6 support
