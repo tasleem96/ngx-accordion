@@ -16,7 +16,7 @@ import {AccordionToggle} from "./AccordionToggle";
 @Component({
     selector: "accordion-group",
     template: `
-  <div class="panel panel-default" [class.dropup]="isOpened">
+  <div class="panel panel-default" [class.dropup]="isOpened" [class.disabled]="disabled">
     <div class="panel-heading" role="tab" (click)="checkAndToggle()">
       <h4 class="panel-title">
         <a *ngIf="heading" role="button" data-toggle="collapse" [attr.aria-expanded]="isOpened">
@@ -55,6 +55,9 @@ export class AccordionGroup {
     @ContentChild(AccordionToggle)
     toggler: ElementRef;
 
+    @Input()
+    disabled: boolean = false;
+
     constructor(@Host() @Inject(forwardRef(() => Accordion)) public accordion: Accordion,
                 private cdr: ChangeDetectorRef) {
     }
@@ -68,6 +71,9 @@ export class AccordionGroup {
     }
 
     toggle() {
+        if (this.disabled)
+            return;
+
         const isOpenedBeforeWeChange = this.isOpened;
         if (this.accordion.closeOthers)
             this.accordion.closeAll();

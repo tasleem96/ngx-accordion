@@ -53,6 +53,7 @@ Import `AccordionModule` in your app and start using component:
     Used inside `<accordion>` and represents a single collapsible panel.
 
     * `heading="Group heading"` Simple text group heading
+    * `[disabled]="true|false"` Indicates if this group is disabled or not (expandable or not)
     * `(onOpen)="doSomethingOnOpen()"` Calls function when this accordion-group is opened
     * `(onClose)="doSomethingOnClose()"` Calls function when this accordion-group is closed
     * `(onToggle)="doSomethingOnToggle(isOpened)"` Calls function when this accordion-group is toggled
@@ -217,6 +218,9 @@ Take a look on samples in [./sample](https://github.com/pleerock/ng2-accordion/t
 usages.
 
 ## Release notes
+
+**0.0.13**
+* added "disabled" option to accordion group
 
 **0.0.12**
 * angular last version support

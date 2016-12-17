@@ -120,7 +120,7 @@ import {Component} from "@angular/core";
     </accordion>
     
 
-    <h2>Regular accordion</h2>
+    <h2>Accordion in for loop</h2>
     <accordion [expandAll]="true">
         <accordion-group [heading]="item.name" *ngFor="let item of items">
             {{ item.description }}
@@ -128,6 +128,25 @@ import {Component} from "@angular/core";
     </accordion>
     
     <button (click)="addItem()">Add item</button>
+    
+    <h2>Accordion with disabled groups</h2>
+    <accordion>
+        <accordion-group heading="About me" [disabled]="true">
+            Its all about me.
+        </accordion-group>
+        <accordion-group heading="Contacts">
+            This is content of the contacts
+        </accordion-group>
+        <accordion-group heading="Map">
+            Content of the Map
+        </accordion-group>
+        <accordion-group [disabled]="true">
+            <accordion-heading>
+                <input type="checkbox"> <accordion-toggle>Custom clickable heading</accordion-toggle>
+            </accordion-heading>
+            Its all about me.
+        </accordion-group>
+    </accordion>
     
 </div>
 `
