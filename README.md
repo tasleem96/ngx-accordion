@@ -1,26 +1,26 @@
-# ng2-accordion
+# ngx-accordion
 
 Simple accordion control for your angular2 applications using bootstrap3. Does not depend of jquery.
 If you don't want to use it without bootstrap - simply create proper css classes. Please star a project if you liked it,
 or create an issue if you have problems with it.
 
-![angular 2 accordion](https://raw.githubusercontent.com/pleerock/ng2-accordion/master/resources/accordion-example.png)
+![angular 2 accordion](https://raw.githubusercontent.com/pleerock/ngx-accordion/master/resources/accordion-example.png)
 
 ## Installation
 
 1. Install npm module:
     
-    `npm install ng2-accordion --save`
+    `npm install ngx-accordion --save`
 
 2. If you are using system.js you may want to add this into `map` and `package` config:
 
     ```json
     {
         "map": {
-            "ng2-accordion": "node_modules/ng2-accordion"
+            "ngx-accordion": "node_modules/ngx-accordion"
         },
         "packages": {
-            "ng2-accordion": { "main": "index.js", "defaultExtension": "js" }
+            "ngx-accordion": { "main": "index.js", "defaultExtension": "js" }
         }
     }
     ```
@@ -69,7 +69,7 @@ Import `AccordionModule` in your app and start using component:
 
 ```typescript
 import {Component} from "@angular/core";
-import {AccordionModule} from "ng2-accordion";
+import {AccordionModule} from "ngx-accordion";
 
 @Component({
     selector: "app",
@@ -214,7 +214,7 @@ export class AppModule {
 }
 ```
 
-Take a look on samples in [./sample](https://github.com/pleerock/ng2-accordion/tree/master/sample) for more examples of
+Take a look on samples in [./sample](https://github.com/pleerock/ngx-accordion/tree/master/sample) for more examples of
 usages.
 
 ## Release notes
