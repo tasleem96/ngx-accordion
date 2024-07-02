@@ -1,5 +1,5 @@
-import {Component, HostListener, forwardRef, Inject, Host} from "@angular/core";
-import {AccordionGroup} from "./AccordionGroup";
+import { Component, HostListener, forwardRef, Inject, Host } from "@angular/core";
+import { AccordionGroup } from "./AccordionGroup";
 
 @Component({
     selector: "accordion-toggle",

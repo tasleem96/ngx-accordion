@@ -1,6 +1,6 @@
-import {ContentChildren, Component, QueryList, Input, forwardRef, AfterContentInit, OnDestroy} from "@angular/core";
-import {AccordionGroup} from "./AccordionGroup";
-import {Subscription} from "rxjs/Subscription";
+import { ContentChildren, Component, QueryList, Input, forwardRef, AfterContentInit, OnDestroy } from "@angular/core";
+import { AccordionGroup } from "./AccordionGroup";
+import { Subscription } from "rxjs";
 
 @Component({
     selector: "accordion",

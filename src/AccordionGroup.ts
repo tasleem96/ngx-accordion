@@ -1,21 +1,21 @@
 import {
-    Component,
-    Input,
-    Host,
-    forwardRef,
-    Inject,
-    ContentChild,
-    ElementRef,
-    ChangeDetectorRef,
-    Output,
-    EventEmitter
+  Component,
+  Input,
+  Host,
+  forwardRef,
+  Inject,
+  ContentChild,
+  ElementRef,
+  ChangeDetectorRef,
+  Output,
+  EventEmitter
 } from "@angular/core";
-import {Accordion} from "./Accordion";
-import {AccordionToggle} from "./AccordionToggle";
+import { Accordion } from "./Accordion";
+import { AccordionToggle } from "./AccordionToggle";
 
 @Component({
-    selector: "accordion-group",
-    template: `
+  selector: "accordion-group",
+  template: `
   <div class="panel panel-default" [class.dropup]="isOpened" [class.disabled]="disabled">
     <div class="panel-heading" role="tab" (click)="checkAndToggle()">
       <h4 class="panel-title">
@@ -37,59 +37,59 @@ import {AccordionToggle} from "./AccordionToggle";
 })
 export class AccordionGroup {
 
-    @Input()
-    heading: string;
+  @Input()
+  heading: string;
 
-    @Input()
-    isOpened: boolean = false;
+  @Input()
+  isOpened: boolean = false;
 
-    @Output()
-    onOpen = new EventEmitter();
+  @Output()
+  onOpen = new EventEmitter();
 
-    @Output()
-    onClose = new EventEmitter();
+  @Output()
+  onClose = new EventEmitter();
 
-    @Output()
-    onToggle = new EventEmitter();
+  @Output()
+  onToggle = new EventEmitter();
 
-    @ContentChild(AccordionToggle)
-    toggler: ElementRef;
+  @ContentChild(AccordionToggle)
+  toggler: ElementRef;
 
-    @Input()
-    disabled: boolean = false;
+  @Input()
+  disabled: boolean = false;
 
-    constructor(@Host() @Inject(forwardRef(() => Accordion)) public accordion: Accordion,
-                private cdr: ChangeDetectorRef) {
+  constructor(@Host() @Inject(forwardRef(() => Accordion)) public accordion: Accordion,
+    private cdr: ChangeDetectorRef) {
+  }
+
+  checkAndToggle() {
+    // if custom toggle element is supplied, then do nothing, custom toggler will take care of it
+    if (this.toggler)
+      return;
+
+    this.toggle();
+  }
+
+  toggle() {
+    if (this.disabled)
+      return;
+
+    const isOpenedBeforeWeChange = this.isOpened;
+    if (this.accordion.closeOthers)
+      this.accordion.closeAll();
+
+    this.isOpened = !isOpenedBeforeWeChange;
+    if (this.isOpened) {
+      this.onOpen.emit();
+    } else {
+      this.onClose.emit();
     }
+    this.onToggle.emit(this.isOpened);
+  }
 
-    checkAndToggle() {
-        // if custom toggle element is supplied, then do nothing, custom toggler will take care of it
-        if (this.toggler)
-            return;
-
-        this.toggle();
-    }
-
-    toggle() {
-        if (this.disabled)
-            return;
-
-        const isOpenedBeforeWeChange = this.isOpened;
-        if (this.accordion.closeOthers)
-            this.accordion.closeAll();
-
-        this.isOpened = !isOpenedBeforeWeChange;
-        if (this.isOpened) {
-            this.onOpen.emit();
-        } else {
-            this.onClose.emit();
-        }
-        this.onToggle.emit(this.isOpened);
-    }
-
-    openOnInitialization() {
-        this.isOpened = true;
-        this.cdr.detectChanges();
-    }
+  openOnInitialization() {
+    this.isOpened = true;
+    this.cdr.detectChanges();
+  }
 
 }

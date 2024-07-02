@@ -1,13 +1,13 @@
 {
   "name": "ngx-accordion",
-  "version": "0.0.17",
-  "description": "Simple accordion control for your angular2 applications using bootstrap3.",
+  "version": "16.0.0",
+  "description": "Simple accordion control for your angular16 applications using bootstrap5.",
   "license": "MIT",
   "readmeFilename": "README.md",
   "private": true,
   "author": {
-    "name": "Umed Khudoiberdiev",
-    "email": "pleerock.me@gmail.com"
+    "name": "Tasleem",
+    "email": "t_alsharqi@outlook.com"
   },
   "main": "index.js",
   "scripts": {
@@ -19,30 +19,30 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pleerock/ngx-accordion.git"
+    "url": "https://github.com/tasleem96/ngx-accordion.git"
   },
   "bugs": {
-    "url": "https://github.com/pleerock/ngx-accordion/issues"
+    "url": "https://github.com/tasleem96/ngx-accordion/issues"
   },
   "tags": [
     "accordion",
-    "angular2",
+    "angular16",
     "typescript",
-    "angular2-accordion"
+    "angular16-accordion"
   ],
   "peerDependencies": {
-    "@angular/core": "^2.0.0"
+    "@angular/core": "^16.2.12"
   },
   "devDependencies": {
-    "@angular/common": "^2.4.3",
-    "@angular/compiler": "^2.4.3",
-    "@angular/compiler-cli": "^2.4.3",
-    "@angular/core": "^2.4.3",
-    "@angular/forms": "^2.4.3",
-    "@angular/platform-browser": "^2.4.3",
-    "@angular/platform-browser-dynamic": "^2.4.3",
+    "@angular/common": "^16.2.12",
+    "@angular/compiler": "^16.2.12",
+    "@angular/compiler-cli": "^16.2.12",
+    "@angular/core": "^16.2.12",
+    "@angular/forms": "^16.2.12",
+    "@angular/platform-browser": "^16.2.12",
+    "@angular/platform-browser-dynamic": "^16.2.12",
     "@types/node": "^7.0.0",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^5.3.3",
     "chai": "^3.4.1",
     "del": "^2.2.2",
     "es6-shim": "^0.35.2",
@@ -58,13 +58,13 @@
     "gulpclass": "^0.1.1",
     "mocha": "^3.2.0",
     "reflect-metadata": "0.1.9",
-    "rxjs": "^5.0.3",
+    "rxjs": "^7.8.1",
     "sinon": "^1.17.7",
     "sinon-chai": "^2.8.0",
     "systemjs": "0.19.42",
     "tslint": "^4.3.1",
     "tslint-stylish": "^2.1.0-beta",
-    "typescript": "^2.1.5",
-    "zone.js": "^0.7.6"
+    "typescript": "^4.9.5",
+    "zone.js": "^0.13.3"
   }
 }
