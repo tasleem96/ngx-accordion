@@ -1,14 +1,21 @@
 {
-  "name": "ngx-accordion",
+  "name": "@tasleem96/ngx-accordion",
   "version": "16.0.0",
-  "description": "Simple accordion control for your angular16 applications using bootstrap5.",
+  "description": "Simple accordion control for your angular applications using bootstrap.",
   "license": "MIT",
   "readmeFilename": "README.md",
-  "private": true,
+  "private": false,
   "author": {
-    "name": "Tasleem",
-    "email": "t_alsharqi@outlook.com"
+    "name": "Umed Khudoiberdiev",
+    "email": "pleerock.me@gmail.com"
   },
+  "contributors": [
+    {
+      "name": "CloudIDEaaS Inc",
+      "email": "support@cloudideaas.com",
+      "url": "http://www.cloudideaas.com/hydra/index.htm"
+    }
+  ],
   "main": "index.js",
   "scripts": {
     "prestart": "typings install",
@@ -16,6 +23,10 @@
     "lite": "lite-server -c bs-config.json",
     "tsc": "tsc",
     "tsc:w": "tsc -w"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "repository": {
     "type": "git",
