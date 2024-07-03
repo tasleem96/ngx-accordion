@@ -1,1 +1,0 @@
-{"version":3,"file":"AccordionToggle.d.ts","sourceRoot":"","sources":["../src/AccordionToggle.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,cAAc,EAAE,MAAM,kBAAkB,CAAC;AAElD,qBAIa,eAAe;IAEsC,OAAO,CAAC,cAAc;gBAAd,cAAc,EAAE,cAAc;IAIpG,OAAO;CAIV"}

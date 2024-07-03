@@ -1,3 +1,9 @@
 {
-  "startPath": "/sample/sample1-simple-usage/index.html"
+  "startPath": "/sample/sample1-simple-usage/index.html",
+  "server": {
+    "baseDir": "./",
+    "routes": {
+      "/node_modules": "node_modules"
+    }
+  }
 }

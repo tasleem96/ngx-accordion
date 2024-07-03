@@ -1,6 +1,6 @@
 {
   "name": "@tasleem96/ngx-accordion",
-  "version": "16.0.2",
+  "version": "16.0.4",
   "description": "Simple accordion control for your Angular applications using Bootstrap.",
   "license": "MIT",
   "readmeFilename": "README.md",
@@ -18,28 +18,17 @@
   ],
   "main": "dist/esm2022/index.mjs",
   "types": "dist/index.d.ts",
-  "module": "dist/esm2022/index.mjs",
+  "module": "fesm2022/tasleem96-ngx-accordion.mjs",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "esm2022": "./dist/esm2022/index.mjs",
-      "default": "./dist/fesm2022/index.mjs"
+      "types": "./index.d.ts",
+      "esm2022": "./esm2022/tasleem96-ngx-accordion.mjs",
+      "default": "./fesm2022/tasleem96-ngx-accordion.mjs",
+      "esm": "./esm2022/tasleem96-ngx-accordion.mjs"
     },
     "./package.json": {
       "default": "./package.json"
     }
-  },
-  "scripts": {
-    "prestart": "npm run build",
-    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\"",
-    "lite": "lite-server -c bs-config.json",
-    "build": "ng build",
-    "tsc": "tsc",
-    "tsc:w": "tsc -w",
-    "build_lib": "ng build",
-    "copy-readme": "cp ./README.md ./dist",
-    "npm_pack": "npm run copy-readme && cd dist && npm pack",
-    "package": "npm run build_lib && npm run npm_pack"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
@@ -61,21 +50,13 @@
   "peerDependencies": {
     "@angular/core": "^16.2.12"
   },
-  "devDependencies": {
-    "@angular/common": "^16.2.12",
-    "@angular/compiler": "^16.2.12",
-    "@angular/compiler-cli": "^16.2.12",
-    "@angular/core": "^16.2.12",
-    "@angular/forms": "^16.2.12",
-    "@angular/platform-browser": "^16.2.12",
-    "@angular/platform-browser-dynamic": "^16.2.12",
-    "@types/node": "^20.14.9",
-    "bootstrap": "^5.3.3",
-    "ng-packagr": "^16.0.0",
-    "rxjs": "^7.8.1",
-    "tslib": "^2.5.0",
-    "typescript": "^4.9.5",
-    "lite-server": "^2.6.0",
-    "concurrently": "^8.2.2"
-  }
+  "dependencies": {
+    "es6-shim": "^0.35.8",
+    "reflect-metadata": "^0.2.2",
+    "systemjs": "^6.15.1",
+    "zone.js": "^0.13.3",
+    "tslib": "^2.3.0"
+  },
+  "typings": "index.d.ts",
+  "sideEffects": false
 }

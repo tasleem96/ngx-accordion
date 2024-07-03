@@ -23,7 +23,8 @@
   "angularCompilerOptions": {
     "enableIvy": true,
     "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
+    "strictInjectionParameters": true,
+    "compilationMode": "partial"
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "**/*.spec.ts", "dist", "e2e"]
