@@ -17,6 +17,7 @@
   "exclude": ["build", "node_modules"],
   "files": ["./src/index.ts"],
   "angularCompilerOptions": {
+    "enableIvy": true, // Ensure Ivy is enabled
     "genDir": "build/factories"
   }
 }

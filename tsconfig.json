@@ -3,7 +3,7 @@
     "outDir": "./dist",
     "target": "ES2020",
     "lib": ["ES2020", "DOM"],
-    "module": "CommonJS",
+    "module": "ESNext",
     "moduleResolution": "Node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -15,8 +15,16 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "resolveJsonModule": true
+  },
+  "angularCompilerOptions": {
+    "enableIvy": true,
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "exclude": ["node_modules", "**/*.spec.ts", "dist", "e2e"]
 }
