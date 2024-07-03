@@ -33,27 +33,27 @@ import { AccordionToggle } from "./AccordionToggle";
       </div>
     </div>
   </div>
-`
+  `
 })
 export class AccordionGroup {
 
   @Input()
-  heading: string;
+  heading?: string;  // Mark heading as optional
 
   @Input()
   isOpened: boolean = false;
 
   @Output()
-  onOpen = new EventEmitter();
+  onOpen = new EventEmitter<void>();
 
   @Output()
-  onClose = new EventEmitter();
+  onClose = new EventEmitter<void>();
 
   @Output()
-  onToggle = new EventEmitter();
+  onToggle = new EventEmitter<boolean>();
 
-  @ContentChild(AccordionToggle)
-  toggler: ElementRef;
+  @ContentChild(AccordionToggle, { static: false })
+  toggler: ElementRef | undefined;
 
   @Input()
   disabled: boolean = false;

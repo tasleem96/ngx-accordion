@@ -22,43 +22,41 @@ export class Accordion implements AfterContentInit, OnDestroy {
     expandAll = false;
 
     @ContentChildren(forwardRef(() => AccordionGroup))
-    groups: QueryList<AccordionGroup>;
+    groups: QueryList<AccordionGroup> | undefined;
 
-    /**
-     * We need to save old groups to make difference and find newly changed group, to toggle them.
-     */
-    private oldGroups: AccordionGroup[];
-
-    private subscription: Subscription;
+    private oldGroups: AccordionGroup[] = [];
+    private subscription: Subscription | undefined;
 
     ngAfterContentInit() {
         if (this.expandAll) {
             this.closeOthers = false;
-            this.oldGroups = this.groups.toArray();
-            this.oldGroups.forEach(group => {
-                group.openOnInitialization();
-            });
-
-            // we subscribe for changes, and if new groups are added we open them automatically
-            this.subscription = this.groups.changes.subscribe(change => {
-                const newGroups = this.groups.toArray().filter(group => {
-                    return this.oldGroups.indexOf(group) === -1;
-                });
-                newGroups.forEach(group => {
+            if (this.groups) {
+                this.oldGroups = this.groups.toArray();
+                this.oldGroups.forEach(group => {
                     group.openOnInitialization();
                 });
-                this.oldGroups = this.groups.toArray();
-            });
+
+                this.subscription = this.groups.changes.subscribe(() => {
+                    const newGroups = this.groups!.toArray().filter(group => {
+                        return this.oldGroups.indexOf(group) === -1;
+                    });
+                    newGroups.forEach(group => {
+                        group.openOnInitialization();
+                    });
+                    this.oldGroups = this.groups!.toArray();
+                });
+            }
         }
     }
 
     ngOnDestroy() {
-        if (this.subscription)
+        if (this.subscription) {
             this.subscription.unsubscribe();
+        }
     }
 
     closeAll() {
-        this.groups.toArray().forEach(group => {
+        this.groups?.toArray().forEach(group => {
             group.isOpened = false;
         });
     }
