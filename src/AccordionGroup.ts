@@ -16,9 +16,9 @@ import { AccordionToggle } from "./AccordionToggle";
 @Component({
   selector: "accordion-group",
   template: `
-  <div class="panel panel-default" [class.dropup]="isOpened" [class.disabled]="disabled">
-    <div class="panel-heading" role="tab" (click)="checkAndToggle()">
-      <h4 class="panel-title">
+  <div class="card" [class.dropup]="isOpened" [class.disabled]="disabled">
+    <div class="card-header" role="tab" (click)="checkAndToggle()">
+      <h4 class="card-title">
         <a *ngIf="heading" role="button" data-toggle="collapse" [attr.aria-expanded]="isOpened">
             {{ heading }}
         </a>
@@ -27,8 +27,8 @@ import { AccordionToggle } from "./AccordionToggle";
         </div>
       </h4>
     </div>
-    <div *ngIf="isOpened" class="panel-collapse collapse in" role="tabpanel" [attr.aria-labelledby]="heading">
-      <div class="panel-body">
+    <div *ngIf="isOpened" class="card-collapse" role="tabpanel" [attr.aria-labelledby]="heading">
+      <div class="card-body">
         <ng-content></ng-content>
       </div>
     </div>

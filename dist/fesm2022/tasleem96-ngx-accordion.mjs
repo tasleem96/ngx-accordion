@@ -42,7 +42,7 @@ class Accordion {
     }
     static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: Accordion, deps: [], target: i0.ɵɵFactoryTarget.Component });
     static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "16.2.12", type: Accordion, selector: "accordion", inputs: { closeOthers: "closeOthers", showArrows: "showArrows", expandAll: "expandAll" }, queries: [{ propertyName: "groups", predicate: i0.forwardRef(function () { return AccordionGroup; }) }], ngImport: i0, template: `
-<div class="panel-group" role="tablist" aria-multiselectable="true">
+<div class="" role="tablist" aria-multiselectable="true">
     <ng-content></ng-content>
 </div>
 `, isInline: true });
@@ -52,7 +52,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.12", ngImpo
             args: [{
                     selector: "accordion",
                     template: `
-<div class="panel-group" role="tablist" aria-multiselectable="true">
+<div class="" role="tablist" aria-multiselectable="true">
     <ng-content></ng-content>
 </div>
 `
@@ -136,9 +136,9 @@ class AccordionGroup {
     }
     static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: AccordionGroup, deps: [{ token: forwardRef(() => Accordion), host: true }, { token: i0.ChangeDetectorRef }], target: i0.ɵɵFactoryTarget.Component });
     static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "16.2.12", type: AccordionGroup, selector: "accordion-group", inputs: { heading: "heading", isOpened: "isOpened", disabled: "disabled" }, outputs: { onOpen: "onOpen", onClose: "onClose", onToggle: "onToggle" }, queries: [{ propertyName: "toggler", first: true, predicate: AccordionToggle, descendants: true }], ngImport: i0, template: `
-  <div class="panel panel-default" [class.dropup]="isOpened" [class.disabled]="disabled">
-    <div class="panel-heading" role="tab" (click)="checkAndToggle()">
-      <h4 class="panel-title">
+  <div class="card" [class.dropup]="isOpened" [class.disabled]="disabled">
+    <div class="card-header" role="tab" (click)="checkAndToggle()">
+      <h4 class="card-title">
         <a *ngIf="heading" role="button" data-toggle="collapse" [attr.aria-expanded]="isOpened">
             {{ heading }}
         </a>
@@ -147,8 +147,8 @@ class AccordionGroup {
         </div>
       </h4>
     </div>
-    <div *ngIf="isOpened" class="panel-collapse collapse in" role="tabpanel" [attr.aria-labelledby]="heading">
-      <div class="panel-body">
+    <div *ngIf="isOpened" class="card-collapse" role="tabpanel" [attr.aria-labelledby]="heading">
+      <div class="card-body">
         <ng-content></ng-content>
       </div>
     </div>
@@ -160,9 +160,9 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.12", ngImpo
             args: [{
                     selector: "accordion-group",
                     template: `
-  <div class="panel panel-default" [class.dropup]="isOpened" [class.disabled]="disabled">
-    <div class="panel-heading" role="tab" (click)="checkAndToggle()">
-      <h4 class="panel-title">
+  <div class="card" [class.dropup]="isOpened" [class.disabled]="disabled">
+    <div class="card-header" role="tab" (click)="checkAndToggle()">
+      <h4 class="card-title">
         <a *ngIf="heading" role="button" data-toggle="collapse" [attr.aria-expanded]="isOpened">
             {{ heading }}
         </a>
@@ -171,8 +171,8 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.12", ngImpo
         </div>
       </h4>
     </div>
-    <div *ngIf="isOpened" class="panel-collapse collapse in" role="tabpanel" [attr.aria-labelledby]="heading">
-      <div class="panel-body">
+    <div *ngIf="isOpened" class="card-collapse" role="tabpanel" [attr.aria-labelledby]="heading">
+      <div class="card-body">
         <ng-content></ng-content>
       </div>
     </div>

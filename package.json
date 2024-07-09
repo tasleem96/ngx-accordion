@@ -1,6 +1,6 @@
 {
   "name": "@tasleem96/ngx-accordion",
-  "version": "16.0.4",
+  "version": "16.0.6",
   "description": "Simple accordion control for your Angular applications using Bootstrap.",
   "license": "MIT",
   "readmeFilename": "README.md",

@@ -5,7 +5,7 @@ import { Subscription } from "rxjs";
 @Component({
     selector: "accordion",
     template: `
-<div class="panel-group" role="tablist" aria-multiselectable="true">
+<div class="" role="tablist" aria-multiselectable="true">
     <ng-content></ng-content>
 </div>
 `
